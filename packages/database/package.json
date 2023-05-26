@@ -1,0 +1,20 @@
+{
+  "name": "prisma",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "prisma": "^4.14.1"
+  },
+  "dependencies": {
+    "@prisma/client": "4.14.1"
+  },
+  "scripts": {
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
+  }
+}
