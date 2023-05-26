@@ -1,5 +1,4 @@
 {
-  "conventionalCommits.scopes": [
-    "repo"
-  ]
+  "conventionalCommits.scopes": ["repo"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
