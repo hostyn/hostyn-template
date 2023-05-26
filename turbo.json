@@ -4,9 +4,6 @@
     "**/.env.*local",
     "**/.env"
   ],
-  "globalEnv": [
-    "DATABASE_URL"
-  ],
   "pipeline": {
     "build": {
       "dependsOn": [
