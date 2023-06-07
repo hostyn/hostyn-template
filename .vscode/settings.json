@@ -1,5 +1,5 @@
 {
-  "conventionalCommits.scopes": ["repo", "frontend", "database"],
+  "conventionalCommits.scopes": ["repo", "frontend", "database", "backend"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
