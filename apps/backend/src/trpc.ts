@@ -1,21 +1,30 @@
 import { TRPCError, initTRPC } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
+import { IronSession, getIronSession } from "iron-session";
 import superjson from "superjson";
 import { ZodError } from "zod";
+import { prisma } from "prisma";
+import { ironSessionOptions } from "./services/iron-session";
 
-type CreateContextOptions = {};
-
-const createInnerTRPCContext = (opts: CreateContextOptions) => {
-  return {};
+type CreateContextOptions = {
+  session: IronSession;
 };
 
-export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts;
+const createInnerTRPCContext = ({ session }: CreateContextOptions) => ({
+  session,
+  prisma,
+});
 
-  return createInnerTRPCContext({}); //const { req, res } = opts;
+export const createTRPCContext = async ({
+  req,
+  res,
+}: CreateNextContextOptions) => {
+  const session = await getIronSession(req, res, ironSessionOptions);
+
+  return createInnerTRPCContext({ session }); //const { req, res } = opts;
 };
 
-const t = initTRPC.context<typeof createTRPCContext>().create({
+const trpc = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
   errorFormatter({ shape, error }) {
     return {
@@ -29,6 +38,6 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
   },
 });
 
-export const createTRPCRouter = t.router;
+export const createTRPCRouter = trpc.router;
 
-export const publicProcedure = t.procedure;
+export const publicProcedure = trpc.procedure;

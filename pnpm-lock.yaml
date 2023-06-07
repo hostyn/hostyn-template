@@ -25,6 +25,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       iron-session: ^6.3.1
+      prisma: workspace:*
       superjson: ^1.12.3
       tsconfig: workspace:*
       typescript: ^4.5.3
@@ -33,6 +34,7 @@ importers:
       '@trpc/client': 10.29.1_@trpc+server@10.29.1
       '@trpc/server': 10.29.1
       iron-session: 6.3.1
+      prisma: link:../../packages/prisma
       superjson: 1.12.3
       zod: 3.21.4
     devDependencies:
