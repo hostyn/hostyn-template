@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "@trpc/client": "^10.29.1",
+    "@trpc/server": "^10.29.1",
+    "iron-session": "^6.3.1",
+    "superjson": "^1.12.3",
+    "zod": "^3.21.4"
+  }
+}
