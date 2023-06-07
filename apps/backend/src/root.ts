@@ -1,9 +1,8 @@
-import { createTRPCRouter, publicProcedure } from "./trpc";
+import { authRouter } from "./routes/auth";
+import { createTRPCRouter } from "./trpc";
 
 export const appRouter = createTRPCRouter({
-  hello: publicProcedure.query(() => {
-    return "Hello from TRPC!";
-  }),
+  auth: authRouter,
 });
 
 // export type definition of API

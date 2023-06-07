@@ -24,7 +24,7 @@ export const createTRPCContext = async ({
   return createInnerTRPCContext({ session }); //const { req, res } = opts;
 };
 
-const trpc = initTRPC.context<typeof createTRPCContext>().create({
+export const trpc = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
   errorFormatter({ shape, error }) {
     return {
@@ -39,5 +39,4 @@ const trpc = initTRPC.context<typeof createTRPCContext>().create({
 });
 
 export const createTRPCRouter = trpc.router;
-
-export const publicProcedure = trpc.procedure;
+export const createTRPCMiddleware = trpc.middleware;
