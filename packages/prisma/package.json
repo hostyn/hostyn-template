@@ -18,6 +18,6 @@
   },
   "scripts": {
     "db:push": "prisma db push",
-    "db:studio": "prisma studio"
+    "dev": "prisma studio --browser none"
   }
 }
