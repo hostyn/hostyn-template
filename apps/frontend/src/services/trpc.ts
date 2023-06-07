@@ -30,4 +30,4 @@ export const trpc = createTRPCNext<AppRouter>({
   ssr: false,
 });
 
-export { type RouterInputs, type RouterOutputs } from "backend";
+export { type AppRouter } from "backend";
