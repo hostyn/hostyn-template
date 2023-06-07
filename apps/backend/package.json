@@ -7,16 +7,18 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^4.5.3"
   },
   "dependencies": {
-    "prisma": "workspace:*",
     "@trpc/client": "^10.29.1",
     "@trpc/server": "^10.29.1",
+    "bcryptjs": "^2.4.3",
     "iron-session": "^6.3.1",
+    "prisma": "workspace:*",
     "superjson": "^1.12.3",
     "zod": "^3.21.4"
   }
