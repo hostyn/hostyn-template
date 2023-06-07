@@ -1,29 +1,14 @@
-import { trpc } from "@services/trpc";
+import useAuth from "hooks/useAuth";
 
 export default function Home() {
-  const trpcContext = trpc.useContext();
-  const login = trpc.auth.login.useMutation({
-    onSuccess: () => trpcContext.auth.invalidate(),
-  });
-  const logout = trpc.auth.logout.useMutation({
-    onSuccess: () => trpcContext.auth.invalidate(),
-  });
-  const { data: session } = trpc.auth.getSession.useQuery();
-
-  const handleLogin = () => {
-    login.mutate();
-  };
-
-  const handleLogout = () => {
-    logout.mutate();
-  };
+  const { user, login, logout } = useAuth();
 
   return (
     <>
       <h1>Home</h1>
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-      <h1>{JSON.stringify(session)}</h1>
+      <button onClick={login}>Login</button>
+      <button onClick={logout}>Logout</button>
+      <h1>{JSON.stringify(user)}</h1>
     </>
   );
 }
