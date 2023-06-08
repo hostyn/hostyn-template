@@ -7,12 +7,6 @@ export default function protectedContent(
   getServerSideProps: GetServerSideProps
 ) {
   return withIronSessionSsr(async (ctx) => {
-    const user = ctx.req.session.user;
-
-    if (user == null) {
-      return { redirect: { destination: "/", permanent: false } };
-    }
-
     const helper = useServerSideHelper(ctx);
 
     await helper.auth.getSession.prefetch();
