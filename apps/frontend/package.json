@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.12",
     "@trpc/client": "^10.29.1",
     "@trpc/next": "^10.29.1",
+    "@trpc/react-query": "^10.29.1",
     "@trpc/server": "^10.29.1",
     "backend": "workspace:*",
     "iron-session": "^6.3.1",

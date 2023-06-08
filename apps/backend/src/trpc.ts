@@ -10,7 +10,7 @@ type CreateContextOptions = {
   session: IronSession;
 };
 
-const createInnerTRPCContext = ({ session }: CreateContextOptions) => ({
+export const createInnerTRPCContext = ({ session }: CreateContextOptions) => ({
   session,
   prisma,
 });

@@ -51,8 +51,10 @@ importers:
 
   apps/frontend:
     specifiers:
+      '@tanstack/react-query': ^4.29.12
       '@trpc/client': ^10.29.1
       '@trpc/next': ^10.29.1
+      '@trpc/react-query': ^10.29.1
       '@trpc/server': ^10.29.1
       '@types/node': ^17.0.12
       '@types/react': ^18.0.22
@@ -68,8 +70,10 @@ importers:
       tsconfig: workspace:*
       typescript: ^4.5.3
     dependencies:
+      '@tanstack/react-query': 4.29.12_biqbaboplfbrettd7655fr4n2y
       '@trpc/client': 10.29.1_@trpc+server@10.29.1
       '@trpc/next': 10.29.1_bytuzrgfn2h5diprtqapgbczey
+      '@trpc/react-query': 10.29.1_na4xefa36cieoj5mcl2dhsmtnm
       '@trpc/server': 10.29.1
       backend: link:../backend
       iron-session: 6.3.1_next@13.4.1
