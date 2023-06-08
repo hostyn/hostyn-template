@@ -4,6 +4,11 @@
     "**/.env.*local",
     "**/.env"
   ],
+  "globalEnv": [
+    "NODE_ENV",
+    "SECRET_COOKIE_PASSWORD",
+    "COOKIE_NAME"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": [
