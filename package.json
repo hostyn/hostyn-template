@@ -5,8 +5,10 @@
     "dev": "dotenv -- turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:generate": "dotenv -- turbo db:generate",
+    "db:push": "dotenv -- turbo db:push",
     "db:studio": "dotenv -- turbo db:studio",
-    "db:push": "dotenv -- turbo db:push"
+    "db:seed": "dotenv -- turbo db:seed"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",

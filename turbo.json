@@ -19,10 +19,16 @@
       "cache": false,
       "persistent": true
     },
-    "db:studio": {
+    "db:generate": {
       "cache": false
     },
     "db:push": {
+      "cache": false
+    },
+    "db:studio": {
+      "cache": false
+    },
+    "db:seed": {
       "cache": false
     }
   }
