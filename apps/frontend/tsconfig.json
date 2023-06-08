@@ -11,7 +11,8 @@
     "paths": {
       "@services/*": ["services/*"],
       "@hooks/*": ["hooks/*"],
-      "@middleware/*": ["middleware/*"]
+      "@middleware/*": ["middleware/*"],
+      "@context/*": ["context/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
