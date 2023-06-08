@@ -3,9 +3,7 @@ import { withIronSessionSsr } from "iron-session/next";
 import { useServerSideHelper } from "@hooks/useServerSideHelper";
 import { type GetServerSideProps } from "next";
 
-export default function protectedContent(
-  getServerSideProps?: GetServerSideProps
-) {
+export default function publicContent(getServerSideProps?: GetServerSideProps) {
   return withIronSessionSsr(async (ctx) => {
     const helper = useServerSideHelper(ctx);
 
