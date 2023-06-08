@@ -1,24 +1,46 @@
 import { z } from "zod";
-import { protectedProcedure, publicProcedure } from "../procedures";
+import { publicProcedure } from "../procedures";
 import { createTRPCRouter } from "../trpc";
 import { prisma } from "prisma";
 import bcrypt from "bcryptjs";
+import { TRPCError } from "@trpc/server";
 
 export const authRouter = createTRPCRouter({
-  login: publicProcedure.mutation(async ({ ctx }) => {
-    ctx.session.user = {
-      email: "test@test.com",
-      id: "123",
-    };
-    await ctx.session.save();
-    return { success: true };
-  }),
+  login: publicProcedure
+    .input(
+      z.object({
+        email: z.string().min(1, "email-required").email(),
+        password: z.string().min(1, "password-required"),
+      })
+    )
+    .mutation(async ({ ctx, input }) => {
+      const user = await ctx.prisma.user.findUnique({
+        where: { email: input.email },
+      });
+
+      if (user == null) {
+        throw new TRPCError({ code: "FORBIDDEN", message: "wrong-email" });
+      }
+
+      if (!bcrypt.compareSync(input.password, user.password)) {
+        throw new TRPCError({ code: "BAD_REQUEST", message: "wrong-password" });
+      }
+
+      ctx.session.user = {
+        email: user.email,
+        id: user.id,
+      };
+
+      await ctx.session.save();
+      return ctx.session.user;
+    }),
 
   register: publicProcedure
     .input(
       z.object({
         email: z
           .string()
+          .min(1, "email-required")
           .email()
           .refine(async (email) => {
             const count = await prisma.user.count({ where: { email: email } });

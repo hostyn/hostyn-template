@@ -13,8 +13,17 @@ export default function useAuth() {
     onSuccess: () => trpcContext.auth.invalidate(),
   });
 
-  const login = () => useLogin.mutate();
+  const useRegister = trpc.auth.register.useMutation({
+    onSuccess: () => trpcContext.auth.invalidate(),
+  });
+
+  const login = (email: string, password: string) =>
+    useLogin.mutate({ email, password });
+
+  const register = (email: string, password: string) =>
+    useRegister.mutate({ email, password });
+
   const logout = () => useLogout.mutate();
 
-  return { user, login, logout };
+  return { user, login, register, logout };
 }
