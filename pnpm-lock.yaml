@@ -86,11 +86,13 @@ importers:
       eslint-config-prettier: ^8.3.0
       eslint-config-turbo: ^1.9.3
       eslint-plugin-react: 7.28.0
+      next: ^13.4.1
     dependencies:
       eslint-config-next: 13.4.1_iacogk7kkaymxepzhgcbytyi7q
       eslint-config-prettier: 8.8.0
       eslint-config-turbo: 1.9.3_eslint@8.39.0
       eslint-plugin-react: 7.28.0_eslint@8.39.0
+      next: 13.4.1_biqbaboplfbrettd7655fr4n2y
 
   packages/prisma:
     specifiers:
