@@ -1,3 +1,4 @@
+import "iron-session";
 import type { IronSessionOptions } from "iron-session";
 
 export const ironSessionOptions: IronSessionOptions = {
@@ -8,3 +9,12 @@ export const ironSessionOptions: IronSessionOptions = {
   },
   ttl: 0,
 };
+
+declare module "iron-session" {
+  interface IronSessionData {
+    user?: {
+      id: string;
+      email: string;
+    };
+  }
+}

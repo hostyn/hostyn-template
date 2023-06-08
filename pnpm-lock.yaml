@@ -59,6 +59,8 @@ importers:
       '@types/react-dom': ^18.0.7
       backend: workspace:*
       eslint-config-custom: workspace:*
+      iron-session: ^6.3.1
+      iron-session-config: workspace:*
       next: ^13.4.1
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -70,6 +72,8 @@ importers:
       '@trpc/next': 10.29.1_bytuzrgfn2h5diprtqapgbczey
       '@trpc/server': 10.29.1
       backend: link:../backend
+      iron-session: 6.3.1_next@13.4.1
+      iron-session-config: link:../../packages/iron-session-config
       next: 13.4.1_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -2393,6 +2397,31 @@ packages:
       '@types/node': 17.0.45
       cookie: 0.5.0
       iron-webcrypto: 0.2.8
+    dev: false
+
+  /iron-session/6.3.1_next@13.4.1:
+    resolution: {integrity: sha512-3UJ7y2vk/WomAtEySmPgM6qtYF1cZ3tXuWX5GsVX4PJXAcs5y/sV9HuSfpjKS6HkTL/OhZcTDWJNLZ7w+Erx3A==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      express: '>=4'
+      koa: '>=2'
+      next: '>=10'
+    peerDependenciesMeta:
+      express:
+        optional: true
+      koa:
+        optional: true
+      next:
+        optional: true
+    dependencies:
+      '@peculiar/webcrypto': 1.4.3
+      '@types/cookie': 0.5.1
+      '@types/express': 4.17.17
+      '@types/koa': 2.13.6
+      '@types/node': 17.0.45
+      cookie: 0.5.0
+      iron-webcrypto: 0.2.8
+      next: 13.4.1_biqbaboplfbrettd7655fr4n2y
     dev: false
 
   /iron-webcrypto/0.2.8:
