@@ -10,7 +10,8 @@
     "baseUrl": "src",
     "paths": {
       "@services/*": ["services/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@middleware/*": ["middleware/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
