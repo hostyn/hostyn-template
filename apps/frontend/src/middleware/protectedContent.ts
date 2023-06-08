@@ -1,21 +1,30 @@
 import { ironSessionOptions } from "iron-session-config";
 import { withIronSessionSsr } from "iron-session/next";
 import { useServerSideHelper } from "@hooks/useServerSideHelper";
+import { GetServerSideProps } from "next";
 
-export const protectedContent = withIronSessionSsr(async ({ req }) => {
-  const user = req.session.user;
+export default function protectedContent(
+  getServerSideProps: GetServerSideProps
+) {
+  return withIronSessionSsr(async (ctx) => {
+    const user = ctx.req.session.user;
 
-  if (user == null) {
-    return { redirect: { destination: "/", permanent: false } };
-  }
+    if (user == null) {
+      return { redirect: { destination: "/", permanent: false } };
+    }
 
-  const helper = useServerSideHelper(req);
+    const helper = useServerSideHelper(ctx);
 
-  await helper.auth.getSession.prefetch();
+    await helper.auth.getSession.prefetch();
 
-  return {
-    props: {
-      trpcState: helper.dehydrate(),
-    },
-  };
-}, ironSessionOptions);
+    const response = await getServerSideProps(ctx);
+
+    return {
+      ...response,
+      props: {
+        ...response["props"],
+        trpcState: helper.dehydrate(),
+      },
+    };
+  }, ironSessionOptions);
+}

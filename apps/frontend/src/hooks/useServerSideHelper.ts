@@ -4,8 +4,8 @@ import { createInnerTRPCContext } from "backend/src/trpc";
 import { GetServerSidePropsContext } from "next";
 import SuperJSON from "superjson";
 
-export const useServerSideHelper = (req: GetServerSidePropsContext["req"]) => {
-  const context = createInnerTRPCContext({ session: req.session });
+export const useServerSideHelper = (ctx: GetServerSidePropsContext) => {
+  const context = createInnerTRPCContext({ session: ctx.req.session });
 
   const helper = createServerSideHelpers({
     router: appRouter,
