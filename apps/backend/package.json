@@ -20,6 +20,7 @@
     "iron-session": "^6.3.1",
     "prisma": "workspace:*",
     "superjson": "^1.12.3",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "iron-session-config": "workspace:*"
   }
 }

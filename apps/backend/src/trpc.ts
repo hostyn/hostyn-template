@@ -1,10 +1,10 @@
-import { TRPCError, initTRPC } from "@trpc/server";
+import { initTRPC } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import { IronSession, getIronSession } from "iron-session";
 import superjson from "superjson";
 import { ZodError } from "zod";
 import { prisma } from "prisma";
-import { ironSessionOptions } from "./services/iron-session";
+import { ironSessionOptions } from "iron-session-config";
 
 type CreateContextOptions = {
   session: IronSession;

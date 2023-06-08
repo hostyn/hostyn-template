@@ -27,6 +27,7 @@ importers:
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       iron-session: ^6.3.1
+      iron-session-config: workspace:*
       prisma: workspace:*
       superjson: ^1.12.3
       tsconfig: workspace:*
@@ -37,6 +38,7 @@ importers:
       '@trpc/server': 10.29.1
       bcryptjs: 2.4.3
       iron-session: 6.3.1
+      iron-session-config: link:../../packages/iron-session-config
       prisma: link:../../packages/prisma
       superjson: 1.12.3
       zod: 3.21.4
@@ -93,6 +95,19 @@ importers:
       eslint-config-turbo: 1.9.3_eslint@8.39.0
       eslint-plugin-react: 7.28.0_eslint@8.39.0
       next: 13.4.1_biqbaboplfbrettd7655fr4n2y
+
+  packages/iron-session-config:
+    specifiers:
+      '@types/node': ^17.0.12
+      iron-session: ^6.3.1
+      tsconfig: workspace:*
+      typescript: ^4.5.3
+    dependencies:
+      iron-session: 6.3.1
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
+    devDependencies:
+      '@types/node': 17.0.45
 
   packages/prisma:
     specifiers:
@@ -3772,7 +3787,6 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /typescript/5.0.4:
     resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
