@@ -12,7 +12,9 @@
       "@services/*": ["services/*"],
       "@hooks/*": ["hooks/*"],
       "@middleware/*": ["middleware/*"],
-      "@context/*": ["context/*"]
+      "@context/*": ["context/*"],
+      "@views/*": ["views/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
