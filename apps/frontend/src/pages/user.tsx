@@ -1,10 +1,15 @@
-import useAuth from "@hooks/useAuth";
-import { protectedContent } from "@middleware/protectedContent";
+import App from "@components/App";
+import withAuth from "@context/withAuth";
+import protectedContent from "@middleware/protectedContent";
+import User from "@views/User";
 
-export default function User() {
-  const { user } = useAuth();
-
-  return <h1>{JSON.stringify(user)}</h1>;
+function Page() {
+  return (
+    <App>
+      <User />
+    </App>
+  );
 }
 
-export const getServerSideProps = protectedContent;
+export default withAuth(Page);
+export const getServerSideProps = protectedContent();

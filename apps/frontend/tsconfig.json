@@ -14,7 +14,8 @@
       "@middleware/*": ["middleware/*"],
       "@context/*": ["context/*"],
       "@views/*": ["views/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@components/*": ["components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
