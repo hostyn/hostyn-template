@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <Nav>
-      <h1>HOSTYN</h1>
+      <StyledLink href="/">HOSTYN</StyledLink>
       {user == null ? (
         <StyledLink href="/auth">Login</StyledLink>
       ) : (
