@@ -60,7 +60,7 @@ export default function Home() {
           borderRadius="5px"
           padding="0 5px"
         >
-          apps/frontend/src/pages/index.tsx
+          apps/frontend/src/views/Home/index.tsx
         </Span>
       </Text>
       <TechnologiesGrid>

@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Head from "next/head";
 
 const Main = styled.main`
   display: flex;
@@ -12,6 +13,9 @@ const Main = styled.main`
 export default function App({ children }) {
   return (
     <>
+      <Head>
+        <title>Hostyn Template</title>
+      </Head>
       <Navbar />
       <Main>{children}</Main>
       <Footer />
