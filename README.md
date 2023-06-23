@@ -7,7 +7,7 @@ This template includes the following packages/apps:
 ### Apps and Packages
 
 - `frontend`: a [Next.js](https://nextjs.org/) app
-- `backend`: a [TRPC](https://trpc.io/) backend
+- `backend`: a [tRPC](https://trpc.io/) backend
 - `ui`: a library of ui components
 - `eslint-config-custom`: `eslint` configurations
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
@@ -42,9 +42,8 @@ pnpm dev
 
 Learn more about the power of Turborepo:
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- [Next.js](https://nextjs.org/)
+- [Turborepo](https://turbo.build/)
+- [tRPC](https://trpc.io/)
+- [Prisma](https://www.prisma.io/)
+- [iron-session](https://github.com/vvo/iron-session)
